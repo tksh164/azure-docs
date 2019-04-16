@@ -67,6 +67,8 @@
     href: app-service-how-works-readme.md
   - name: App Service plans
     href: overview-hosting-plans.md
+  - name: Java runtime support
+    href: app-service-jre-support.md
   - name: OS functionality
     href: operating-system-functionality.md
   - name: Security
@@ -202,6 +204,8 @@
     href: /powershell
   - name: REST API
     href: /rest/api/appservice/
+  - name: Resource Manager template
+    href: /azure/templates/microsoft.web/allversions
 - name: Resources
   items:
   - name: Build your skills with Microsoft Learn

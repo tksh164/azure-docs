@@ -3,20 +3,23 @@ title: Azure Function Activity in Azure Data Factory | Microsoft Docs
 description: Learn how to use the Azure Function activity to run an Azure Function in a Data Factory pipeline
 services: data-factory
 documentationcenter: ''
-author: douglaslMS
-manager: craigg
-editor: 
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/09/2019
-ms.author: douglasl
+author: sharonlo101
+ms.author: shlo
+manager: craigg
 ---
 
 # Azure Function activity in Azure Data Factory
 
 The Azure Function activity allows you to run [Azure Functions](../azure-functions/functions-overview.md) in a Data Factory pipeline. To run an Azure Function, you need to create a linked service connection and an activity that specifies the Azure Function that you plan to execute.
+
+For an eight-minute introduction and demonstration of this feature, watch the following video:
+
+> [!VIDEO https://channel9.msdn.com/shows/azure-friday/Run-Azure-Functions-from-Azure-Data-Factory-pipelines/player]
 
 ## Azure Function linked service
 

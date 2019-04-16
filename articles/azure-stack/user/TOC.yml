@@ -59,8 +59,6 @@
       href: Azure-stack-create-service-principals.md
   - name: Use services
     items:
-    - name: Key considerations
-      href: azure-stack-considerations.md
     - name: Compute
       items:
       - name: Overview
@@ -97,6 +95,16 @@
         href: azure-stack-network-overview.md
       - name: Networking considerations
         href: azure-stack-network-differences.md
+      - name: VPN gateways
+        items:
+        - name: Connect using VPN
+          href: azure-stack-connect-vpn.md
+        - name: About VPN gateway
+          href: azure-stack-vpn-gateway-about-vpn-gateways.md
+        - name: Configure IPSec/IKE connection policies
+          href: azure-stack-vpn-s2s.md
+        - name: VPN gateway settings
+          href: azure-stack-vpn-gateway-settings.md
       - name: iDNS for Azure Stack
         href: azure-stack-understanding-dns.md
       - name: DNS in Azure Stack
@@ -130,10 +138,15 @@
         href: azure-stack-ethereum.md
       - name: Deploy a Service Fabric cluster
         href: azure-stack-solution-template-service-fabric-cluster.md
-      - name: Add Kubernetes cluster
+      - name: Deploy a Kubernetes cluster
+        href: azure-stack-solution-template-kubernetes-deploy.md
         items:
-        - name: Deploy a Kubernetes cluster
-          href: azure-stack-solution-template-kubernetes-deploy.md
+        - name: Deploy Kubernetes using Azure AD
+          href: azure-stack-solution-template-kubernetes-azuread.md
+        - name: Deploy Kubernetes using AD FS
+          href: azure-stack-solution-template-kubernetes-adfs.md
+        - name: Enable the Kubernetes dashboard
+          href: azure-stack-solution-template-kubernetes-dashboard.md
         - name: Troubleshoot Kubernetes cluster
           href: azure-stack-solution-template-kubernetes-trouble.md
       - name: Deploy Cognitive Services
@@ -165,7 +178,7 @@
           href: azure-stack-version-profiles-powershell.md
         - name: Azure CLI
           href: azure-stack-version-profiles-azurecli2.md
-        - name: GO
+        - name: Go
           href: azure-stack-version-profiles-go.md
         - name: Ruby
           href: azure-stack-version-profiles-ruby.md
@@ -216,6 +229,6 @@
   - name: Pricing information
     href: https://azure.microsoft.com/overview/azure-stack/how-to-buy/
   - name: Stack Overflow
-    href: http://stackoverflow.com/questions/tagged/azure-stack
+    href: https://stackoverflow.com/questions/tagged/azure-stack
   - name: Training and certification
     href: https://docs.microsoft.com/azure/azure-stack/azure-stack-train-and-cert

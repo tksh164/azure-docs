@@ -4,7 +4,7 @@ description: In this quickstart, you deploy your first Java Hello World in Azure
 services: app-service\web
 documentationcenter: ''
 author: msangapu
-manager: cfowler
+manager: jeconnoc
 editor: ''
 
 ms.assetid: 582bb3c2-164b-42f5-b081-95bfcb7a502a
@@ -13,7 +13,7 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: Java
 ms.topic: quickstart
-ms.date: 12/10/2018
+ms.date: 03/27/2019
 ms.author: msangapu
 ms.custom: mvc
 #Customer intent: As a Java developer, I want deploy a java app so that it is hosted on Azure App Service.
@@ -51,21 +51,18 @@ Then add the following plugin definition inside the `<build>` element of the `po
     <!--*************************************************-->
     <!-- Deploy to Tomcat in App Service Linux           -->
     <!--*************************************************-->
-      
     <plugin>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-webapp-maven-plugin</artifactId>
-        <version>1.4.0</version>
+        <version>1.5.3</version>
         <configuration>
-   
             <!-- App information -->
             <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
             <appName>${WEBAPP_NAME}</appName>
             <region>${REGION}</region>
    
             <!-- Java Runtime Stack for App on Linux-->
-            <linuxRuntime>tomcat 8.5-jre8</linuxRuntime>
-   
+            <linuxRuntime>tomcat 8.5-jre8</linuxRuntime> 
         </configuration>
     </plugin>
 </plugins>
@@ -98,16 +95,15 @@ Once deployment has completed, browse to the deployed application using the foll
 
 **Congratulations!** You've deployed your first Java app to App Service on Linux.
 
-
 [!INCLUDE [cli-samples-clean-up](../../../includes/cli-samples-clean-up.md)]
-
 
 ## Next steps
 
-In this quickstart, you used Maven to create a Java app, configured the [Maven Plugin for Azure Web Apps](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin), then deployed a web archive packaged Java app to App Service on Linux. Refer to the following tutorials and how-to articles for more information hosting Java applications on App Service on Linux.
+> [!div class="nextstepaction"]
+> [Tutorial: Java Enterprise app with PostgreSQL](tutorial-java-enterprise-postgresql-app.md)
 
-- [Tutorial: Deploy a Java Enterprise app with PostgreSQL](tutorial-java-enterprise-postgresql-app.md)
-- [Configure a Tomcat data source](app-service-linux-java.md#connecting-to-data-sources)
-- [CI/CD with Jenkins](/azure/jenkins/deploy-jenkins-app-service-plugin)
-- [Set up application performance monitoring tools](how-to-java-apm-monitoring.md)
+> [!div class="nextstepaction"]
+> [Configure Java app](configure-custom-container.md)
 
+> [!div class="nextstepaction"]
+> [CI/CD with Jenkins](/azure/jenkins/deploy-jenkins-app-service-plugin)

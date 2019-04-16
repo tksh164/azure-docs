@@ -13,9 +13,10 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/14/2018
+ms.date: 02/21/2019
 ms.author: sethm
-ms.reviewer: jeffgo
+ms.reviewer: justini
+ms.lastreviewed: 11/14/2018
 
 ---
 # Use Azure Resource Manager templates in Azure Stack
@@ -64,7 +65,7 @@ Use the PowerShell DSC extension to configure an existing virtual machine Local 
 
 ## Create a virtual machine from a user image
 
-[Create a virtual machine from a custom user image](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-from-user-image). This template also deploys a virtual network (with DNS), public IP address, and a network interface.
+[Create a virtual machine from a custom user image](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-create-from-customimage). This template also deploys a virtual network (with DNS), public IP address, and a network interface.
 
 ## Basic virtual machine
 

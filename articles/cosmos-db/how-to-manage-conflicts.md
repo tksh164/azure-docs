@@ -8,7 +8,7 @@ ms.date: 10/17/2018
 ms.author: chrande
 ---
 
-# Manage conflicts between regions
+# Manage conflict resolution policies in Azure Cosmos DB
 
 With multi-region writes, when a data conflict occurs, you can resolve the conflict by using different conflict resolution policies. This article describes how to manage conflict resolution policies by using different language platforms.
 
@@ -145,7 +145,14 @@ After your container is created, you must create the `resolver` stored procedure
 ### <a id="create-custom-conflict-resolution-policy-stored-proc-python"></a>Python SDK
 
 ```python
-
+udp_collection = {
+  'id': self.udp_collection_name,
+  'conflictResolutionPolicy': {
+    'mode': 'Custom',
+    'conflictResolutionProcedure': 'dbs/' + self.database_name + "/colls/" + self.udp_collection_name + '/sprocs/resolver'
+    }
+}
+udp_collection = self.try_create_document_collection(create_client, database, udp_collection)
 ```
 
 After your container is created, you must create the `resolver` stored procedure.
@@ -242,9 +249,9 @@ for (Conflict conflict : response.getResults()) {
 ### <a id="read-from-conflict-feed-java-sync"></a>Java Sync SDK
 
 ```java
-Iterator<Conflict> conflictsIterartor = client.readConflicts(this.collectionLink, null).getQueryIterator();
-while (conflictsIterartor.hasNext()) {
-    Conflict conflict = conflictsIterartor.next();
+Iterator<Conflict> conflictsIterator = client.readConflicts(this.collectionLink, null).getQueryIterator();
+while (conflictsIterator.hasNext()) {
+    Conflict conflict = conflictsIterator.next();
     /* Do something with conflict */
 }
 ```
@@ -262,8 +269,8 @@ const { result: conflicts } = await container.conflicts.readAll().toArray();
 ### <a id="read-from-conflict-feed-python"></a>Python
 
 ```python
-conflicts_iterartor = iter(client.ReadConflicts(self.manual_collection_link))
-conflict = next(conflicts_iterartor, None)
+conflicts_iterator = iter(client.ReadConflicts(self.manual_collection_link))
+conflict = next(conflicts_iterator, None)
 while conflict:
     # Do something with conflict
     conflict = next(conflicts_iterator, None)
@@ -273,6 +280,6 @@ while conflict:
 
 Learn about the following Azure Cosmos DB concepts:
 
+* [How to configure multi-master in your applications](how-to-multi-master.md).
 * [Partitioning and data distribution](partition-data.md)
 * [Indexing in Azure Cosmos DB](indexing-policies.md)
-

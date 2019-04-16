@@ -12,9 +12,10 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 12/06/2018
+ms.date: 01/22/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
+ms.lastreviewed: 01/22/2019
 
 ---
 
@@ -38,15 +39,15 @@ To view the status of a scale unit:
 3. In the results, select the scale unit.
 4. On the left, under **General**, select **Nodes**.
 
-  View the following information:
+   View the following information:
 
-  - The list of individual nodes
-  - Operational Status (see list below)
-  - Power Status (running or stopped)
-  - Server model
-  - IP address of the baseboard management controller (BMC)
-  - Total number of cores
-  - Total amount of memory
+   - The list of individual nodes
+   - Operational Status (see list below)
+   - Power Status (running or stopped)
+   - Server model
+   - IP address of the baseboard management controller (BMC)
+   - Total number of cores
+   - Total amount of memory
 
 ![status of a scale unit](media/azure-stack-node-actions/multinodeactions.png)
 
@@ -71,7 +72,7 @@ When you view information about a scale unit node, you can also perform node act
 
 The operational state of the node determines which options are available.
 
-You will need to install Azure Stack PowerShell modules. These cmdlets are in the **Azs.Fabric.Admin** module. To install or verify your installation of PowerShell for Azure Stack, see [Install PowerShell for Azure Stack](azure-stack-powershell-install.md).
+You need to install Azure Stack PowerShell modules. These cmdlets are in the **Azs.Fabric.Admin** module. To install or verify your installation of PowerShell for Azure Stack, see [Install PowerShell for Azure Stack](azure-stack-powershell-install.md).
 
 ## Stop
 
@@ -81,7 +82,7 @@ This action is typically used when a node is in a hung state and no longer respo
 
 To run the stop action, open an elevated PowerShell prompt, and run the following cmdlet:
 
-```PowerShell  
+```powershell  
   Stop-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
@@ -95,7 +96,7 @@ The **start** action turns on the node. It's the same as if you press the power 
  
 To run the start action, open an elevated PowerShell prompt, and run the following cmdlet:
 
-```PowerShell  
+```powershell  
   Start-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
@@ -114,7 +115,7 @@ This action is typically used during field replacement of parts, such as the rep
 
 To run the drain action, open an elevated PowerShell prompt, and run the following cmdlet:
 
-```PowerShell  
+```powershell  
   Disable-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
@@ -126,7 +127,7 @@ The **resume** action resumes a disabled node and marks it active for workload p
 
 To run the resume action, open an elevated PowerShell prompt, and run the following cmdlet:
 
-```PowerShell  
+```powershell  
   Enable-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
@@ -145,10 +146,26 @@ When you run the repair action, you need to specify the BMC IP address.
 
 To run the repair action, open an elevated PowerShell prompt, and run the following cmdlet:
 
-  ````PowerShell
+  ```powershell
   Repair-AzsScaleUnitNode -Location <RegionName> -Name <NodeName> -BMCIPv4Address <BMCIPv4Address>
-  ````
+  ```
+
+## Shutdown
+
+The **shutdown** action fist moves all active workloads to the remaining nodes in the same scale unit. Then the action gracefully shuts down the scale unit node.
+
+After you start a node that was shutdown, you need to run the [resume](#resume) action. Earlier workloads that were running on the node do not fail back.
+
+If the shutdown operation fails, attempt the [drain](#drain) operation followed by the shutdown operation.
+
+To run the shutdown action, open an elevated PowerShell prompt, and run the following cmdlet:
+
+  ```powershell
+  Stop-AzsScaleUnitNode -Location <RegionName> -Name <NodeName> -Shutdown
+  ```
+
+
 
 ## Next steps
 
-To learn more about the Azure Stack Fabric administrator module, see [Azs.Fabric.Admin](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.5.0).
+To learn more about the Azure Stack Fabric administrator module, see [Azs.Fabric.Admin](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0).

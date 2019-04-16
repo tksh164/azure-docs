@@ -1,7 +1,7 @@
 ---
 title: Create, change, or delete an Azure route table using Ansible
 description: Learn how to use Ansible to create, change or delete a route table using Ansible
-ms.service: ansible
+ms.service: azure
 keywords: ansible, azure, devops, bash, playbook, networking, route, route table
 author: tomarchermsft
 manager: jeconnoc
@@ -46,7 +46,7 @@ ansible-playbook route_table_create.yml
 ## Associate a route table to a subnet
 A subnet can have zero or one route table associated to it. A route table can be associated to zero or multiple subnets. Since route tables are not associated to virtual networks, you must associate a route table to each subnet you want the route table associated to. All traffic leaving the subnet is routed based on routes you've created within route tables, [default routes](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#default), and routes propagated from an on-premises network, if the virtual network is connected to an Azure virtual network gateway (ExpressRoute, or VPN, if using BGP with a VPN gateway). You can only associate a route table to subnets in virtual networks that exist in the same Azure location and subscription as the route table.
 
-This section presents a sample Ansible playbook that creates a virtual network and a submit, then associates a route table to the subnet.
+This section presents a sample Ansible playbook that creates a virtual network and a subnet, then associates a route table to the subnet.
 
 ```yml
 - hosts: localhost
