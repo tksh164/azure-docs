@@ -1,11 +1,11 @@
 ---
 title: 'Graph data modeling for Azure Cosmos DB Gremlin API'
-description: Learn how to model a graph database using Cosmos DB Gremlin API.
+description: Learn how to model a graph database by using Azure Cosmos DB Gremlin API. This article describes when to use a graph database and best practices to model entities and relationships. 
 author: LuisBosquez
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: overview
-ms.date: 06/24/2019
+ms.date: 12/02/2019
 ms.author: lbosq
 ---
 
@@ -42,7 +42,7 @@ The following are the best practices for the properties in the graph objects:
 
 | Object | Property | Type | Notes |
 | --- | --- | --- |  --- |
-| Vertex | ID | String | Uniquely enforced per partition. If a value isn't supplied upon insertion, and auto-generated GUID will be stored. |
+| Vertex | ID | String | Uniquely enforced per partition. If a value isn't supplied upon insertion, an auto-generated GUID will be stored. |
 | Vertex | label | String | This property is used to define the type of entity that the vertex represents. If a value isn't supplied, a default value "vertex" will be used. |
 | Vertex | properties | String, Boolean, Numeric | A list of separate properties stored as key-value pairs in each vertex. |
 | Vertex | partition key | String, Boolean, Numeric | This property defines where the vertex and its outgoing edges will be stored. Read more about [graph partitioning](graph-partitioning.md). |
@@ -89,7 +89,7 @@ Edge objects have a default direction that is followed by a traversal when using
 
 However, traversing in the opposite direction of an edge, using the `in()` function, will always result in a cross-partition query. Learn more about [graph partitioning](graph-partitioning.md). If there's a need to constantly traverse using the `in()` function, it's recommended to add edges in both directions.
 
-You can determine the edge direction by using the `.to()` or `.from()` predicates to the `.addE()` Gremlin step. Or by using the [BulkExecutor library for Gremlin API](bulk-executor-graph-dotnet.md).
+You can determine the edge direction by using the `.to()` or `.from()` predicates to the `.addE()` Gremlin step. Or by using the [bulk executor library for Gremlin API](bulk-executor-graph-dotnet.md).
 
 > [!NOTE]
 > Edge objects have a direction by default.

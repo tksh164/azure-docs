@@ -1,18 +1,18 @@
 ---
-title: Schedule Azure Container Registry tasks
-description: Set timers to run an Azure Container Registry task on a defined schedule.
-services: container-registry
-author: dlepow
-manager: gwallace
-
-ms.service: container-registry
+title: Tutorial - Schedule an ACR task
+description: In this tutorial, learn how to run an Azure Container Registry Task on a defined schedule by setting one or more timer triggers
 ms.topic: article
 ms.date: 06/27/2019
-ms.author: danlep
 ---
 # Run an ACR task on a defined schedule
 
-This article shows you how to run an [ACR task](container-registry-tasks-overview.md) on a schedule. Schedule a task by setting up one or more *timer triggers*.
+This tutorial shows you how to run an [ACR Task](container-registry-tasks-overview.md) on a schedule. Schedule a task by setting up one or more *timer triggers*. Timer triggers can be used alone, or in combination with other task triggers.
+
+In this tutorial, learn about scheduling tasks and:
+
+> [!div class="checklist"]
+> * Create a task with a timer trigger
+> * Manage timer triggers
 
 Scheduling a task is useful for scenarios like the following:
 
@@ -43,9 +43,9 @@ As a simple example, the following command triggers running the `hello-world` im
 az acr task create \
   --name mytask \
   --registry myregistry \
-  --context /dev/null \
   --cmd hello-world \
-  --schedule "0 21 * * *"
+  --schedule "0 21 * * *" \
+  --context /dev/null
 ```
 
 Run the [az acr task show][az-acr-task-show] command to see that the timer trigger is configured. By default, the base image update trigger is also enabled.
@@ -171,11 +171,11 @@ Each field can have one of the following types of values:
 
 |Type  |Example  |When triggered  |
 |---------|---------|---------|
-|A specific value |<nobr>"5 * * * *"</nobr>|every hour at 5 minutes past the hour|
-|All values (`*`)|<nobr>"* 5 * * *"</nobr>|every minute of the hour beginning 5:00 UTC (60 times a day)|
-|A range (`-` operator)|<nobr>"0 1-3 * * *"</nobr>|3 times per day, at 1:00, 2:00, and 3:00 UTC|
-|A set of values (`,` operator)|<nobr>"20,30,40 * * * *"</nobr>|3 times per hour, at 20 minutes, 30 minutes, and 40 minutes past the hour|
-|An interval value (`/` operator)|<nobr>"*/10 * * * *"</nobr>|6 times per hour, at 10 minutes, 20 minutes, and so on, past the hour
+|A specific value |<nobr>`"5 * * * *"`</nobr>|every hour at 5 minutes past the hour|
+|All values (`*`)|<nobr>`"* 5 * * *"`</nobr>|every minute of the hour beginning 5:00 UTC (60 times a day)|
+|A range (`-` operator)|<nobr>`"0 1-3 * * *"`</nobr>|3 times per day, at 1:00, 2:00, and 3:00 UTC|
+|A set of values (`,` operator)|<nobr>`"20,30,40 * * * *"`</nobr>|3 times per hour, at 20 minutes, 30 minutes, and 40 minutes past the hour|
+|An interval value (`/` operator)|<nobr>`"*/10 * * * *"`</nobr>|6 times per hour, at 10 minutes, 20 minutes, and so on, past the hour
 
 [!INCLUDE [functions-cron-expressions-months-days](../../includes/functions-cron-expressions-months-days.md)]
 
@@ -194,7 +194,11 @@ Each field can have one of the following types of values:
 
 ## Next steps
 
-For examples of tasks triggered by source code commits or base image updates, check out the [ACR Tasks tutorial series](container-registry-tutorial-quick-task.md).
+In this tutorial, you learned how to create Azure Container Registry tasks that are automatically triggered by a timer. 
+
+For an example of using a scheduled task to clean up repositories in a registry, see [Automatically purge images from an Azure container registry](container-registry-auto-purge.md).
+
+For examples of tasks triggered by source code commits or base image updates, see other articles in the [ACR Tasks tutorial series](container-registry-tutorial-quick-task.md).
 
 
 

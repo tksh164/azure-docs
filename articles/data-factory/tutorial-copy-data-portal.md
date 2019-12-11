@@ -1,17 +1,16 @@
 ---
-title: Use the Azure portal to create a data factory pipeline | Microsoft Docs
+title: Use the Azure portal to create a data factory pipeline 
 description: This tutorial provides step-by-step instructions for using the Azure portal to create a data factory with a pipeline. The pipeline uses the copy activity to copy data from Azure Blob storage to a SQL database.
 services: data-factory
 documentationcenter: ''
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
-
 ms.topic: tutorial
+ms.custom: seo-lt-2019
 ms.date: 06/21/2018
 ms.author: jingwang
 ---
@@ -168,6 +167,10 @@ In this tutorial, you start with creating the pipeline. Then you create linked s
 1. Go to the tab with the pipeline, and in **Sink Dataset**, confirm that **OutputSqlDataset** is selected.
 
     ![Pipeline tab](./media/tutorial-copy-data-portal/pipeline-tab-2.png)       
+
+You can optionally map the schema of the source to corresponding schema of destination by following [Schema mapping in copy activity
+](copy-activity-schema-and-type-mapping.md)
+    
 ## Validate the pipeline
 To validate the pipeline, select **Validate** from the tool bar.
  

@@ -1,19 +1,11 @@
 ---
-title: Create multi-container app using Docker Compose - Azure App Service
-description: Deploy your first multi-container app in Azure Web App for Containers in minutes
+title: 'Quickstart: Create a multi-container app'
+description: Get started with multi-container apps on Azure App Service by deploying your first multi-container app.
 keywords: azure app service, web app, linux, docker, compose, multicontainer, multi-container, web app for containers, multiple containers, container, wordpress, azure db for mysql, production database with containers
-services: app-service\web
-documentationcenter: ''
-author: msangapu
-manager: jeconnoc
-editor: ''
+author: msangapu-msft
 
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
-ms.date: 03/27/2019
+ms.date: 08/23/2019
 ms.author: msangapu
 ms.custom: mvc
 ms.custom: seodec18
@@ -41,7 +33,7 @@ In the Cloud Shell, create a quickstart directory and then change to it.
 ```bash
 mkdir quickstart
 
-cd quickstart
+cd $HOME/quickstart
 ```
 
 Next, run the following command to clone the sample app repository to your quickstart directory. Then change to the `multicontainerwordpress` directory.

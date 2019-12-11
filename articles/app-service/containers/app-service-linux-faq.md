@@ -1,18 +1,9 @@
 ---
-title: App Service on Linux FAQ - Azure | Microsoft Docs
-description: Azure App Service on Linux FAQ.
+title: Run built-in containers FAQ
+description: Find answers to the frequently asked questions about the built-in Linux containers in Azure App Service.
 keywords: azure app service, web app, faq, linux, oss, web app for containers, multi-container, multicontainer
-services: app-service
-documentationCenter: ''
 author: msangapu-msft
-manager: stefsch
-editor: ''
 
-ms.assetid:
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: msangapu
@@ -55,7 +46,7 @@ This action is the same as a Docker restart.
 Yes, you can do that through the source control management (SCM) site.
 
 > [!NOTE]
-> You can also connect to the app container directly from your local development machine using SSH, SFTP, or Visual Studio Code (for live debugging Node.js apps). For more information, see [Remote debugging and SSH in App Service on Linux](https://aka.ms/linux-debug).
+> You can also connect to the app container directly from your local development machine using SSH, SFTP, or Visual Studio Code (for live debugging Node.js apps). For more information, see [Remote debugging and SSH in App Service on Linux](https://azure.github.io/AppService/2018/05/07/New-SSH-Experience-and-Remote-Debugging-for-Linux-Web-Apps.html).
 >
 
 **How can I create a Linux App Service plan through an SDK or an Azure Resource Manager template?**

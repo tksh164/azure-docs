@@ -1,12 +1,13 @@
 ---
-title: Run Azure CLI or PowerShell commands with Azure AD credentials to access blob or queue data | Microsoft Docs
+title: Run Azure CLI or PowerShell commands with Azure AD credentials to access blob or queue data
+titleSuffix: Azure Storage
 description: Azure CLI and PowerShell support signing in with Azure AD credentials to run commands on Azure Storage blob and queues data. An access token is provided for the session and used to authorize calling operations. Permissions depend on the RBAC role assigned to the Azure AD security principal.
 services: storage
 author: tamram
 
 ms.service: storage
-ms.topic: article
-ms.date: 07/03/2019
+ms.topic: how-to
+ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
@@ -22,7 +23,7 @@ You can assign permissions to blob and queue data to an Azure AD security princi
 
 The extensions are supported for operations on containers and queues. Which operations you may call depends on the permissions granted to the Azure AD security principal with which you sign in to Azure CLI or PowerShell. Permissions to Azure Storage containers or queues are assigned via role-based access control (RBAC). For example, if you are assigned the **Blob Data Reader** role, then you can run scripting commands that read data from a container or queue. If you are assigned the **Blob Data Contributor** role, then you can run scripting commands that read, write, or delete a container or queue or the data they contain. 
 
-For details about the permissions required for each Azure Storage operation on a container or queue, see [Call storage operations with OAuth tokens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#call-storage-operations-with-oauth-tokens).  
+For details about the permissions required for each Azure Storage operation on a container or queue, see [Call storage operations with OAuth tokens](https://docs.microsoft.com/rest/api/storageservices/authorize-with-azure-active-directory#call-storage-operations-with-oauth-tokens).  
 
 ## Call CLI commands using Azure AD credentials
 

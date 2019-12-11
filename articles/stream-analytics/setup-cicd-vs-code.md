@@ -1,16 +1,15 @@
 ---
-title:  Continuously integrate and develop with Azure Stream Analytics CI/CD npm package 
+title:  Use the Azure Stream Analytics CI/CD npm package
 description: This article describes how to use Azure Stream Analytics CI/CD npm package to set up a continuous integration and deployment process.
-services: stream-analytics
 author: su-jie
 ms.author: sujie
-ms.reviewer: jasonh
+ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/15/2019
 ---
 
-# Continuously integrate and develop with Stream Analytics CI/CD npm package
+# Use the Stream Analytics CI/CD npm package
 This article describes how to use the Azure Stream Analytics CI/CD npm package to set up a continuous integration and deployment process.
 
 ## Build the VS Code project

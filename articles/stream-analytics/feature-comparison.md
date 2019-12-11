@@ -1,7 +1,6 @@
 ---
 title: Azure Stream Analytics feature comparison
 description: This article compares the features supported for Azure Stream Analytics cloud and IoT Edge jobs in the Azure portal, Visual Studio, and Visual Studio Code.
-services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
 ms.service: stream-analytics
@@ -54,7 +53,7 @@ With Azure Stream Analytics, you can create streaming solutions in the cloud and
 |Query testing with a sample file     |Yes         |Yes         |No         |
 |Share inputs and outputs across multiple queries     |No         |Yes         |No         |
 |C# UDF     |No         |Yes         |No         |
-|Submit, start, and stop jobs     |Yes         |Yes         |No         |
+|Submit jobs     |Yes         |Yes         |No         |
 |List jobs and view job entities     |Yes         |Yes         |No         |
 |View job metrics and diagram     |Yes         |Partial         |No         |
 |View job runtime errors     |Yes         |Partial         |No         |

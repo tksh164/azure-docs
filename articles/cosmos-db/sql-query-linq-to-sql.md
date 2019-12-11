@@ -1,10 +1,10 @@
 ---
 title: LINQ to SQL translation in Azure Cosmos DB
-description: Mapping LINQ queries to Azure Cosmos DB SQL queries.
+description: Learn the LINQ operators supported and how the LINQ queries are mapped to SQL queries in Azure Cosmos DB.
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/30/2019
+ms.date: 12/02/2019
 ms.author: tisande
 
 ---
@@ -319,5 +319,5 @@ A nested query applies the inner query to each element of the outer container. O
 
 ## Next steps
 
-- [Azure Cosmos DB .NET samples](https://github.com/Azure/azure-cosmosdb-dotnet)
+- [Azure Cosmos DB .NET samples](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Model document data](modeling-data.md)
